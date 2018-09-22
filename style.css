@@ -132,7 +132,7 @@ header.article-title {
 .hamburger-box.minus input[type='checkbox']:checked ~ .hamburger-inner:after {
 	transition-property: top;
 	transition-duration: .5s;
-	top: 0px;
+	top: 10px;
 }
 
 .hamburger-box.minus input[type='checkbox']:checked ~ .hamburger-inner {
@@ -148,7 +148,7 @@ header.article-title {
 	transition-property: top, transform;
 	transition-duration: .5s, .5s;
 	transition-delay: 0s, .5s;
-	top: 0px;
+	top: 10px;
 	transform: translate3d(-1px, -10px, 25px) rotate(-30deg);
 }
 
@@ -156,7 +156,7 @@ header.article-title {
 	transition-property: top, transform;
 	transition-duration: .5s, .5s;
 	transition-delay: 0s, .5s;
-	top: 0px;
+	top: 10px;
 	transform: translate3d(-1px, 10px, 25px) rotate(30deg);
 }
 
