@@ -1,5 +1,5 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-	body {
+	body section {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 9em 9em 9em 9em;
@@ -7,7 +7,7 @@
 }
 
 @media only screen and (min-device-width : 480px) and (max-device-width : 640px) {
-	body {
+	body section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 9em 9em;
@@ -15,7 +15,7 @@
 }
 
 @media only screen and (min-device-width : 640px) and (max-device-width : 768px) {
-	body {
+	body section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: 9em 9em;
@@ -23,7 +23,7 @@
 }
 
 @media only screen and (min-device-width : 769px) {
-	body {
+	body section {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-template-rows: 9em 9em;
@@ -88,21 +88,40 @@ header.article-title {
 /* HAMBURGER SLIDER START*/
 .hamburger-box.slider input[type='checkbox']:checked ~ .hamburger-inner {
 	transition-property: transform, margin-top;
-	transition-duration: .2s, .2s;
+	transition-duration: 1s, 1s;
 	transform: rotate(45deg);
 	margin-top: 10px;
 }
 
 .hamburger-box.slider input[type='checkbox']:checked ~ .hamburger-inner:before {
     transition-property: opacity;
-	transition-duration: .2s;
+	transition-duration: 1s;
     opacity: 0;
 }
 
 .hamburger-box.slider input[type='checkbox']:checked ~ .hamburger-inner:after {
 	transition-property: transform;
-	transition-duration: .2s;
+	transition-duration: 1s;
 	transform: translate3d(0,-20px,0) rotate(-90deg);
+}
+
+.hamburger-box.slider input[type='checkbox']:not(:checked) ~ .hamburger-inner {
+	transition-property: transform, margin-top;
+	transition-duration: 1s, 1s;
+	transform: rotate(0deg);
+	margin-top: 0px;
+}
+
+.hamburger-box.slider input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: transform;
+	transition-duration: 1s;
+	transform: translate3d(0,0,0) rotate(0deg);
+}
+
+.hamburger-box.slider input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+    transition-property: opacity;
+	transition-duration: 1s;
+    opacity: 1;
 }
 /* HAMBURGER SLIDER END */
 
@@ -124,6 +143,30 @@ header.article-title {
 	margin-top: 10px;
 	transform: rotate(45deg);
 }
+
+.hamburger-box.squeeze input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+	transition-property: transform, top;
+	transition-duration: .3s, .3s;
+	transition-delay: 0s, .3s;
+	top: 10px;
+	transform: rotate(0deg);
+}
+
+.hamburger-box.squeeze input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: transform, top;
+	transition-duration: .3s, .3s;
+	transition-delay: 0s, .3s;
+	top: 20px;
+	transform: rotate(0deg);
+}
+
+.hamburger-box.squeeze input[type='checkbox']:not(:checked) ~ .hamburger-inner {
+	transition-property: transform, margin-top;
+	transition-duration: .3s, .3s;
+	transition-delay: 0s, .3s;
+	margin-top: 0px;
+	transform: rotate(0deg);
+}
 /* HAMBURGER SQUEEZE END */
 
 
@@ -132,13 +175,31 @@ header.article-title {
 .hamburger-box.minus input[type='checkbox']:checked ~ .hamburger-inner:after {
 	transition-property: top;
 	transition-duration: .5s;
-	top: 0px;
+	top: 10px;
 }
 
 .hamburger-box.minus input[type='checkbox']:checked ~ .hamburger-inner {
 	transition-property: margin-top;
 	transition-duration: .5s;
 	margin-top: 10px;
+}
+
+.hamburger-box.minus input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+	transition-property: top;
+	transition-duration: .5s;
+	top: 10px;
+}
+
+.hamburger-box.minus input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: top;
+	transition-duration: .5s;
+	top: 20px;
+}
+
+.hamburger-box.minus input[type='checkbox']:not(:checked) ~ .hamburger-inner {
+	transition-property: margin-top;
+	transition-duration: .5s;
+	margin-top: 0px;
 }
 /* HAMBURGER MINUS END */
 
@@ -147,23 +208,31 @@ header.article-title {
 .hamburger-box.arrow input[type='checkbox']:checked ~ .hamburger-inner:before {
 	transition-property: top, transform;
 	transition-duration: .5s, .5s;
-	transition-delay: 0s, .5s;
-	top: 0px;
-	transform: translate3d(-1px, -10px, 25px) rotate(-30deg);
+	transform: rotate(-30deg) translate3d(3px, -10px, 25px);
 }
 
 .hamburger-box.arrow input[type='checkbox']:checked ~ .hamburger-inner:after {
-	transition-property: top, transform;
-	transition-duration: .5s, .5s;
-	transition-delay: 0s, .5s;
-	top: 0px;
-	transform: translate3d(-1px, 10px, 25px) rotate(30deg);
+	transition-property: transform;
+	transition-duration: .5s;
+	transform: rotate(30deg) translate3d(-3px, 1px, 25px);
 }
 
-.hamburger-box.arrow input[type='checkbox']:checked ~ .hamburger-inner {
-	transition-property: margin-top;
-	transition-duration: .5s;
+.hamburger-box.arrow .hamburger-inner {
 	margin-top: 10px;
+}
+
+.hamburger-box.arrow input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+	transition-property: top, transform;
+	transition-duration: .5s, .5s;
+	transform: rotate(0deg) translate3d(0px, 0px, 0px);
+	top: 0px;
+}
+
+.hamburger-box.arrow input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: top, transform;
+	transition-duration: .5s, .5s;
+	transform: rotate(0deg) translate3d(0px, 0px, 0px);
+	top: 20px;
 }
 /* HAMBURGER ARROW END */
 
@@ -182,6 +251,27 @@ header.article-title {
 	margin-top: 10px;
 	transform: rotate(135deg);
 }
+
+.hamburger-box.spin input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+	transition-property: transform, top;
+	transition-duration: .2s, .5s;
+	top: 10px;
+	transform: rotate(0deg);
+}
+
+.hamburger-box.spin input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: transform, top;
+	transition-duration: .2s, .5s;
+	top: 20px;
+	transform: rotate(0deg);
+}
+
+.hamburger-box.spin input[type='checkbox']:not(:checked) ~ .hamburger-inner {
+	transition-property: transform, margin-top;
+	transition-duration: .2s, .5s;
+	transform: rotate(0deg);
+	margin-top: 0px;
+}
 /* HAMBURGER SPIN END */
 
 
@@ -199,6 +289,27 @@ header.article-title {
 	transition-duration: .2s, .5s;
 	margin-top: 10px;
 	transform: rotate(225deg);
+}
+
+.hamburger-box.vortex input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+	transition-property: transform, top;
+	transition-duration: .2s, .5s;
+	top: 10px;
+	transform: rotate(0deg);
+}
+
+.hamburger-box.vortex input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: transform, top;
+	transition-duration: .2s, .5s;
+	top: 20px;
+	transform: rotate(0deg);
+}
+
+.hamburger-box.vortex input[type='checkbox']:not(:checked) ~ .hamburger-inner {
+	transition-property: transform, margin-top;
+	transition-duration: .2s, .5s;
+	transform: rotate(0deg);
+	margin-top: 0px;
 }
 /* HAMBURGER VORTEX END */
 
