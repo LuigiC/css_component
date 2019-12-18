@@ -332,3 +332,51 @@ header.article-title {
 	transform: rotate(45deg);
 }
 /* HAMBURGER INSTANT END */
+
+
+/* HAMBURGER BOOK START */
+.hamburger-box.book input[type='checkbox']:checked ~ .hamburger-inner:before {
+	transition-property: top, transform;
+	transition-delay: 0s, .5s;
+	transition-duration: .5s, .5s;
+	top: 20px;
+	transform: translate3d(-18px,-20px,0) rotate(-90deg);
+}
+
+.hamburger-box.book input[type='checkbox']:checked ~ .hamburger-inner:after {
+	transition-property: top, transform;
+	transition-delay: 0s, .5s;
+	transition-duration: .5s, .5s;
+	top: 20px;
+	transform: translate3d(-5px,-13px,0) rotate(-45deg);
+}
+
+.hamburger-box.book input[type='checkbox']:checked ~ .hamburger-inner {
+	transition-property: margin-top;
+	transition-duration: .5s;
+	margin-top: 20px;
+}
+
+.hamburger-box.book input[type='checkbox']:not(:checked) ~ .hamburger-inner:before {
+	transition-property: transform, top;
+	transition-delay: 0s, .5s;
+	transition-duration: .5s, .5s;
+	top: 10px;
+	transform: translate3d(0,0,0) rotate(0deg);
+}
+
+.hamburger-box.book input[type='checkbox']:not(:checked) ~ .hamburger-inner:after {
+	transition-property: transform, top;
+	transition-delay: 0s, .5s;
+	transition-duration: .5s, .5s;
+	top: 20px;
+	transform: translate3d(0,0,0) rotate(0deg);
+}
+
+.hamburger-box.book input[type='checkbox']:not(:checked) ~ .hamburger-inner {
+	transition-property: margin-top;
+	transition-duration: .5s;
+	transition-delay: .5s;
+	margin-top: 0px;
+}
+/* HAMBURGER BOOK END */
